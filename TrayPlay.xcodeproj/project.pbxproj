@@ -562,7 +562,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"Updating version/build number from git...\"\nplist=${PROJECT_DIR}/${INFOPLIST_FILE}\n\n# increment the build number (ie 115 to 116)\nversionid=`git describe --long | awk '{split($0,a,\"-\"); print a[1]}'`\nbuildid=`git describe --long | awk '{split($0,a,\"-\"); print a[3]}'`\nbuildnum=`git rev-list master | wc -l`\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleShortVersionString $versionid\" \"${plist}\"\necho \"Updated version number to $versionid\"\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\necho \"Updated build number to $buildnum\"\n\necho \"#define VERSION_ID \\\"$versionid\\\"\" > ${PROJECT_DIR}/TrayPlay/version.h\necho \"#define BUILD_ID   \\\"$buildid\\\"\" >> ${PROJECT_DIR}/TrayPlay/version.h";
+			shellScript = "echo \"Updating version/build number from git...\"\nplist=${PROJECT_DIR}/${INFOPLIST_FILE}\n\n# increment the build number (ie 115 to 116)\nversionid=`git describe --long | awk '{split($0,a,\"-\"); print a[1]}'`\nbuildid=`git describe --long | awk '{split($0,a,\"-\"); print a[3]}'`\nbuildnum=`git rev-list master | wc -l`\nbuildnum=`expr 43 + $buildnum`\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleShortVersionString $versionid\" \"${plist}\"\necho \"Updated version number to $versionid\"\n\n/usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\necho \"Updated build number to $buildnum\"\n\necho \"#define VERSION_ID \\\"$versionid\\\"\" > ${PROJECT_DIR}/TrayPlay/version.h\necho \"#define BUILD_ID   \\\"$buildid\\\"\" >> ${PROJECT_DIR}/TrayPlay/version.h";
 		};
 /* End PBXShellScriptBuildPhase section */
 
