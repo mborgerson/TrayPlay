@@ -1,0 +1,18 @@
+[submodule "SFBPopovers"]
+	path = SFBPopovers
+	url = https://github.com/sbooth/SFBPopovers.git
+[submodule "ITSwitch"]
+	path = ITSwitch
+	url = https://github.com/iluuu1994/ITSwitch.git
+[submodule "Sparkle"]
+	path = Sparkle
+	url = https://github.com/sparkle-project/Sparkle.git
+[submodule "AFNetworking"]
+	path = AFNetworking
+	url = https://github.com/AFNetworking/AFNetworking.git
+[submodule "MXMarqueeText"]
+	path = MXMarqueeText
+	url = https://github.com/mborgerson/MXMarqueeText.git
+[submodule "MXLoginItemManager"]
+	path = MXLoginItemManager
+	url = https://github.com/mborgerson/MXLoginItemManager.git

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
+            <connections>
+                <outlet property="autoUpdateToggle" destination="pIu-yI-aTU" id="IxA-vz-7wY"/>
+                <outlet property="backButton" destination="FRg-hY-TbC" id="emk-1M-jgp"/>
+                <outlet property="closeButton" destination="Fib-p2-NXn" id="cdy-DO-JoO"/>
+                <outlet property="launchAtLoginToggle" destination="vj0-rr-kY1" id="J7A-9F-pa4"/>
+                <outlet property="playerController" destination="CcF-yo-eJz" id="0Gb-SF-qsj"/>
+                <outlet property="selectedPlayer" destination="kCO-Dq-ZiE" id="N9e-Q6-gJh"/>
+                <outlet property="settingsButton" destination="ute-le-ygY" id="HIj-FG-nks"/>
+                <outlet property="settingsView" destination="fF7-YK-1KU" id="M5U-ub-633"/>
+                <outlet property="updater" destination="CZY-Nd-qhR" id="Mz1-Kc-LS4"/>
+            </connections>
+        </customObject>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customView wantsLayer="YES" id="2bV-6S-rYP" userLabel="Player View">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="322"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="7jo-wo-SJg" customClass="AlbumImageView">
+                    <rect key="frame" x="0.0" y="122" width="200" height="200"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="N1n-o2-VTW"/>
+                    <connections>
+                        <action selector="albumArtWasClicked:" target="CcF-yo-eJz" id="rcs-My-vQh"/>
+                    </connections>
+                </imageView>
+                <customView wantsLayer="YES" id="1RA-Mr-URm" userLabel="Artist" customClass="MXMarqueeText">
+                    <rect key="frame" x="0.0" y="96" width="200" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                </customView>
+                <customView wantsLayer="YES" id="8FS-E3-KAc" customClass="MXMarqueeText">
+                    <rect key="frame" x="0.0" y="73" width="200" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                </customView>
+                <customView wantsLayer="YES" id="ute-le-ygY" customClass="ColorIconButton">
+                    <rect key="frame" x="175" y="0.0" width="25" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <connections>
+                        <action selector="showSettingsView:" target="Voe-Tx-rLC" id="hfs-w6-xVP"/>
+                    </connections>
+                </customView>
+                <customView wantsLayer="YES" id="cah-mA-xUQ" userLabel="Play" customClass="ColorIconButton">
+                    <rect key="frame" x="80" y="28" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <connections>
+                        <action selector="playButtonWasClicked:" target="CcF-yo-eJz" id="TmZ-QR-WT3"/>
+                    </connections>
+                </customView>
+                <customView wantsLayer="YES" id="xnL-zj-iPh" userLabel="Previous" customClass="ColorIconButton">
+                    <rect key="frame" x="28" y="28" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <connections>
+                        <action selector="prevButtonWasClicked:" target="CcF-yo-eJz" id="mtt-zH-fO3"/>
+                    </connections>
+                </customView>
+                <customView wantsLayer="YES" id="XEV-ee-dUa" userLabel="Next" customClass="ColorIconButton">
+                    <rect key="frame" x="133" y="28" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <connections>
+                        <action selector="nextButtonWasClicked:" target="CcF-yo-eJz" id="gas-S9-ZPP"/>
+                    </connections>
+                </customView>
+            </subviews>
+        </customView>
+        <viewController id="CcF-yo-eJz" customClass="PlayerController">
+            <connections>
+                <outlet property="artistLabel" destination="1RA-Mr-URm" id="S54-Er-V3w"/>
+                <outlet property="nextButton" destination="XEV-ee-dUa" id="h0w-uh-3p5"/>
+                <outlet property="playButton" destination="cah-mA-xUQ" id="UNZ-3h-GCc"/>
+                <outlet property="prevButton" destination="xnL-zj-iPh" id="Dm1-qc-Er9"/>
+                <outlet property="songImage" destination="7jo-wo-SJg" id="Elt-XC-l12"/>
+                <outlet property="songLabel" destination="8FS-E3-KAc" id="2Rr-tl-HFS"/>
+                <outlet property="view" destination="2bV-6S-rYP" id="ZlR-q3-NaP"/>
+            </connections>
+        </viewController>
+        <customView id="fF7-YK-1KU" userLabel="Settings View">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="324"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView id="vj0-rr-kY1" userLabel="Start on Login Switch" customClass="ITSwitch">
+                    <rect key="frame" x="137" y="236" width="43" height="27"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                            <color key="value" red="0.13725490868091583" green="0.59215688705444336" blue="0.97647064924240112" alpha="1" colorSpace="deviceRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="toggleLaunchAtLogin:" target="Voe-Tx-rLC" id="A0t-PI-7aa"/>
+                    </connections>
+                </customView>
+                <customView id="pIu-yI-aTU" userLabel="Auto Update Switch" customClass="ITSwitch">
+                    <rect key="frame" x="137" y="201" width="43" height="27"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                            <color key="value" red="0.13725490870000001" green="0.59215688710000003" blue="0.97647064920000004" alpha="1" colorSpace="deviceRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="toggleAutoUpdate:" target="Voe-Tx-rLC" id="GEl-b1-22F"/>
+                    </connections>
+                </customView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="RLA-eR-rmf" userLabel="Start on Login">
+                    <rect key="frame" x="18" y="241" width="105" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Start on Login" id="Jzu-pw-cFv">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" id="M03-WZ-dE6" userLabel="About">
+                    <rect key="frame" x="77" y="6" width="47" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="inline" title="About" bezelStyle="inline" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="OuD-gF-kRp">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystemBold"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="showAbout:" target="Voe-Tx-rLC" id="BMn-fd-c75"/>
+                    </connections>
+                </button>
+                <customView id="FRg-hY-TbC" userLabel="Back Button" customClass="ColorIconButton">
+                    <rect key="frame" x="175" y="0.0" width="25" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <connections>
+                        <action selector="hideSettingsView:" target="Voe-Tx-rLC" id="Vqi-pG-W71"/>
+                    </connections>
+                </customView>
+                <customView id="Fib-p2-NXn" userLabel="Close Button" customClass="ColorIconButton">
+                    <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <connections>
+                        <action selector="quitApplication:" target="Voe-Tx-rLC" id="izg-dW-toA"/>
+                    </connections>
+                </customView>
+                <segmentedControl verticalHuggingPriority="750" id="kCO-Dq-ZiE">
+                    <rect key="frame" x="20" y="280" width="160" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="0XD-NS-Dpt">
+                        <font key="font" metaFont="system"/>
+                        <segments>
+                            <segment label="iTunes" imageScaling="proportionallyUpOrDown" width="77"/>
+                            <segment label="Spotify" imageScaling="proportionallyUpOrDown" width="76" selected="YES" tag="1"/>
+                        </segments>
+                    </segmentedCell>
+                    <connections>
+                        <action selector="currentPlayerChanged:" target="Voe-Tx-rLC" id="sJ3-f1-QdW"/>
+                    </connections>
+                </segmentedControl>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="YMF-80-zwC" userLabel="Start on Login">
+                    <rect key="frame" x="18" y="206" width="83" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Auto Update" id="A64-vZ-adg">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+        </customView>
+        <customObject id="CZY-Nd-qhR" customClass="SUUpdater"/>
+        <userDefaultsController representsSharedInstance="YES" id="4zY-Ek-PvM"/>
+    </objects>
+</document>

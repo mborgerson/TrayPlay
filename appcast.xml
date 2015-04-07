@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>TrayPlay Changelog</title>
+    <link>https://mborgerson.com/TrayPlay/appcast.xml</link>
+    <description>Most recent changes with links to updates.</description>
+    <language>en</language>
+    <item>
+      <title>Version 1.0.0</title>
+      <sparkle:releaseNotesLink>https://mborgerson.com/trayplay/dist/TrayPlay-1.0.0.html</sparkle:releaseNotesLink>
+      <pubDate>Mon, 06 Oct 2014 08:11:24 +0000</pubDate>
+      <enclosure url="https://mborgerson.com/trayplay/dist/TrayPlay-1.0.0.dmg" length="1707600" type="application/octet-stream" sparkle:version="38" sparkle:shortVersionString="1.0.0" sparkle:dsaSignature="MC0CFQCpgT8tDTgGEXSsDS+7fKiPS3CBTAIUY6crHLEf4wZXdAMSdkAhV1/JUZQ="/>
+      <sparkle:minimumSystemVersion>10.8</sparkle:minimumSystemVersion>
+    </item>
+    <item>
+      <title>Version 1.0.2</title>
+      <sparkle:releaseNotesLink>https://mborgerson.com/trayplay/dist/TrayPlay-1.0.2.html</sparkle:releaseNotesLink>
+      <pubDate>Sat, 04 Apr 2015 23:10:45 +0000</pubDate>
+      <enclosure url="https://mborgerson.com/trayplay/dist/TrayPlay-1.0.2.dmg" length="1229542" type="application/octet-stream" sparkle:version="43" sparkle:shortVersionString="1.0.2" sparkle:dsaSignature="MCwCFBK4WiuUN4Rn4MZm+EptSwqtTnH7AhQRx06F5lI78x3RYTGnNxl96utkIQ=="/>
+      <sparkle:minimumSystemVersion>10.8</sparkle:minimumSystemVersion>
+    </item>
+  </channel>
+</rss>
