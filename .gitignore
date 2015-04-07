@@ -2,6 +2,9 @@
 dist
 xcode_build
 
+# Private Keys
+dsa_priv.pem
+
 # OS X
 .DS_Store
 
